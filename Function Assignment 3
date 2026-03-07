@@ -1,0 +1,25 @@
+# Task 1
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+# Example usage
+num = int(input("Enter a number: "))
+print(f"Factorial of {num} is: {factorial(num)}")
+
+# Task 2
+import math
+
+num = float(input("Enter a number: "))
+
+#  calculations using math module
+sqrt_val = math.sqrt(num)
+log_val = math.log(num)
+sine_val = math.sin(num)
+
+
+print(f"Square root: {sqrt_val}")
+print(f"Logarithm: {log_val}")
+print(f"Sine: {sine_val}")
