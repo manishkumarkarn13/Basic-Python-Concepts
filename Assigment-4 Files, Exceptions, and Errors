@@ -1,0 +1,43 @@
+#Task1
+def create_file():
+    # Open in write mode ("w") – creates file or overwrites if it exists
+    with open("sample.txt", "w") as file:
+        file.write("This is a sample text file.\n")
+        file.write("It contains multiple lines.\n")
+    print("sample.txt file created successfully.")
+create_file()
+
+def read_file():
+    try:
+        with open("sample.txt", "r") as file:
+            print("Reading file content:")
+            for i, line in enumerate(file, start=1):
+                print(f"Line {i}: {line.strip()}")
+    except FileNotFoundError:
+        print("Error: The file 'sample.txt' was not found.")
+
+# Run the function
+read_file()
+
+#Task 2
+def write_and_append_file():
+    # Step 1: Write user input to file
+    text = input("Enter text to write to the file: ")
+    with open("output.txt", "w") as file:
+        file.write(text + "\n")
+    print("Data successfully written to output.txt.")
+
+    # Step 2: Append additional user input
+    more_text = input("Enter additional text to append: ")
+    with open("output.txt", "a") as file:
+        file.write(more_text + "\n")
+    print("Data successfully appended.")
+
+    # Step 3: Read and display final content
+    with open("output.txt", "r") as file:
+        print("\nFinal content of output.txt:")
+        for line in file:
+            print(line.strip())
+
+# Run the program
+write_and_append_file()
